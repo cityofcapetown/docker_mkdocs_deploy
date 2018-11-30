@@ -25,17 +25,21 @@ ENV LC_ALL C.UTF-8
 ENV LANG C.UTF-8
 
 COPY deploy.sh .
+COPY push_to_minio.py .
+COPY serve.sh .
 
 RUN chmod +x /deploy.sh
-CMD ["/bin/bash", "./deploy.sh"]
+RUN chmod +x /push_to_minio.py
+RUN chmod +x /serve.sh
 
-#ENV TINI_VERSION v0.18.0
-#ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
-#RUN chmod +x /tini
-#ENTRYPOINT ["/tini", "-g", "--"]
 
-#COPY run.sh .
-#RUN chmod +x /run.sh
-#CMD ["/bin/bash", "./run.sh"]
+#CMD ["/bin/bash", "./deploy.sh"]
+
+ENV TINI_VERSION v0.18.0
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+RUN chmod +x /tini
+ENTRYPOINT ["/tini", "-g", "--"]
+
+CMD ["/bin/bash", "./serve.sh"]
 
 

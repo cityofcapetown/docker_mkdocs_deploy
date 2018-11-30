@@ -16,4 +16,4 @@ cd /$GIT_FOLDER
 # run mkdocs build
 mkdocs build --clean
 # push site folder to minio
-mkdocs serve -a 0.0.0.0:80
+python3 /push_to_minio.py
