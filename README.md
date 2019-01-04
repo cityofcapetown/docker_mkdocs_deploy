@@ -6,7 +6,7 @@ This container will pull a mkdocs folder from a git repo, build it into a static
 ```
 docker run --rm -it \
 -e GIT_REPO=https://ds1.capetown.gov.za/ds_gitlab/OPM/ds_zone_documentation.git \
--p 8000:8000 \
+-p 80:80 \
 --name mkdocs \
 cityofcapetown/docker_mkdocs_deploy 
 
@@ -26,7 +26,7 @@ You can change the behaviour by telling docker to use a different script, like s
 ```
 docker run --rm -it \
 -e GIT_REPO=https://ds1.capetown.gov.za/ds_gitlab/OPM/ds_zone_documentation.git \
--p 8000:8000 \
+-p 80:80 \
 --name mkdocs \
 cityofcapetown/docker_mkdocs_deploy \
 /deploy.sh
