@@ -34,7 +34,7 @@ cityofcapetown/docker_mkdocs_deploy \
 
 Available scripts are 
 
-`serve.sh` - default
+`serve.sh` - default  
 `deploy.sh` - clone in a repo, convert to static site, send site contents of site to bucket [not implemented yet]
 
 
