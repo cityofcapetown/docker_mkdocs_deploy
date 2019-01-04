@@ -2,6 +2,7 @@ FROM ubuntu:18.04
 
 # this is temporary.
 EXPOSE 8000
+EXPOSE 80
 
 # this is permanent
 #EXPOSE minio port 
