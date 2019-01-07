@@ -41,6 +41,9 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
 RUN chmod +x /tini
 ENTRYPOINT ["/tini", "-g", "--"]
 
+# MODIFY HOSTS FILE - this is temporary
+echo '172.29.100.53  ds1.capetown.gov.za' >> /etc/hosts
+echo '172.29.100.54  ds2.capetown.gov.za' >> /etc/hosts
+echo '172.29.100.55  ds3.capetown.gov.za' >> /etc/hosts
+
 CMD ["/bin/bash", "./serve.sh"]
-
-
